@@ -1,0 +1,63 @@
+class Cell:
+    #  Клетка, у которой есть значения
+    #   - занята она или нет
+    #   - номер клетки
+    def __init__(self, status=None, num_cell=None):
+        self.status = status
+        self.num_cell = num_cell
+
+    def __str__(self):
+        return f'{self.status}\t'
+
+    pass
+
+
+class Board:
+    #  Класс поля, который создаёт у себя экземпляры клетки
+    def __init__(self):
+        self.board = [[Cell(0, cell) for cell in range(3)] for line in range(3)]
+
+    def print_board(self):
+        for line in self.board:
+            print('\n')
+            for cell in line:
+                print(f'{cell}', end='\t')
+
+    def change_value_cell(self, user, cell, line):
+        self.board[cell][line] = user
+
+
+
+
+
+class Player:
+    #  У игрока может быть
+    #   - имя
+    #   - на какую клетку ходит
+    def __init__(self, name, step):
+        self.name = name
+        self.step = step
+
+    pass
+
+
+class Game:
+    # класс «Игры» содержит атрибуты:
+    # состояние игры,
+    # игроки,
+    # поле.
+
+    # А также методы:
+
+    # Метод запуска одного хода игры.
+    # Получает одного из игроков, запрашивает у игрока номер клетки, изменяет поле, проверяет, выиграл ли игрок.
+    # Если игрок победил, возвращает True, иначе False.
+
+    # Метод запуска одной игры.
+    # Очищает поле, запускает цикл с игрой, который завершается победой одного из игроков или ничьей.
+    # Если игра завершена, метод возвращает True, иначе False.
+
+    # Основной метод запуска игр.
+    # В цикле запускает игры, запрашивая после каждой игры, хотят ли игроки продолжать играть.
+    # После каждой игры выводится текущий счёт игроков.
+    pass
