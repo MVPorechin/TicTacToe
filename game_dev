@@ -19,15 +19,13 @@ class Board:
 
     def print_board(self):
         for line in self.board:
-            print('\n')
             for cell in line:
                 print(f'{cell}', end='\t')
+            print('\n')
+        print('\n')
 
     def change_value_cell(self, user, cell, line):
         self.board[cell][line] = user
-
-
-
 
 
 class Player:
