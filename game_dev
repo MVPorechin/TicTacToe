@@ -16,13 +16,19 @@ class Board:
     #  Класс поля, который создаёт у себя экземпляры клетки
     def __init__(self):
         self.board = [[Cell(0, cell) for cell in range(3)] for line in range(3)]
-
+        
     def print_board(self):
-        for line in self.board:
-            for cell in line:
-                print(f'{cell}', end='\t')
-            print('\n')
-        print('\n')
+        for cell in self.board:
+            # print('\t'.join(map(str, cell)))
+            print(*cell, sep='\t')
+
+        # for line in self.board:
+        #     for cell in line:
+        #         print(f'{cell}', end='\t')
+        #     print('\n')
+        # print('\n')
+
+    
 
     def change_value_cell(self, user, cell, line):
         self.board[cell][line] = user
