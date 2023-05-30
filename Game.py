@@ -61,8 +61,9 @@ class Game:
 
     def add_winner_to_rating(self, player):
         if len(self.wall_of_fame) == 0:
-            for player in self.players_list:
-                self.wall_of_fame[player.name] = 0
+            for player_n in self.players_list:
+                self.wall_of_fame[player_n.name] = 0
+            self.wall_of_fame[player.name] = 1
         else:
             self.wall_of_fame[player.name] += 1
 
