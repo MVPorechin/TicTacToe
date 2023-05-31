@@ -1,9 +1,11 @@
-from Game import Player
-from Game import Game
+from Tictactoe import Board
+from Tictactoe import Player
+from Tictactoe import Game
 
+my_board = Board()
+f_player = Player('Ivan', 'X')
+s_player = Player('Alex', 'O')
+new_game = Game(True, f_player, s_player, my_board)
 
-player1 = Player(input("Enter first player's name : "))
-player2 = Player(input("Enter second player's name : "))
-newGame = Game(player1, player2)
-newGame.gameInstance()
-newGame.play()
+new_game.run_game()
+# print(len(new_game.wall_of_fame))
